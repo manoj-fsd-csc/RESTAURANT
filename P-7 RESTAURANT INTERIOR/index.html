@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Interior</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #f8f8f8;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.1);
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 8px;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: #fff;
+      font-size: 24px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Restaurant Interior Gallery</h1>
+</header>
+
+<main>
+  <div class="gallery">
+    <img src="interior1.jpg" alt="Interior Image 1" onclick="openLightbox('interior1.jpg')">
+    <img src="interior2.jpg" alt="Interior Image 2" onclick="openLightbox('interior2.jpg')">
+    <img src="interior3.jpg" alt="Interior Image 3" onclick="openLightbox('interior3.jpg')">
+    <!-- Add more interior images as needed -->
+  </div>
+
+  <div class="lightbox" onclick="closeLightbox()">
+    <span class="close-btn">&times;</span>
+    <img id="lightbox-img" alt="Enlarged Image">
+  </div>
+</main>
+
+<script>
+  function openLightbox(imageSrc) {
+    document.getElementById('lightbox-img').src = imageSrc;
+    document.querySelector('.lightbox').style.display = 'flex';
+  }
+
+  function closeLightbox() {
+    document.querySelector('.lightbox').style.display = 'none';
+  }
+</script>
+
+</body>
+</html>

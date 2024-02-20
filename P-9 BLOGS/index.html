@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Blogs - The Tasty Bites</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #f8f8f8;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    .featured-blogs {
+      margin-bottom: 30px;
+    }
+
+    .blog-card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 20px;
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+
+    .blog-card:hover {
+      transform: scale(1.05);
+    }
+
+    .blog-card h3 {
+      margin: 0;
+    }
+
+    .blog-card p {
+      margin: 5px 0;
+    }
+
+    .submit-blog-form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    button {
+      width: 100%;
+      background-color: #4caf50;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Restaurant Blogs - The Tasty Bites</h1>
+</header>
+
+<main>
+  <div class="featured-blogs">
+    <h2>Featured Blogs</h2>
+
+    <div class="blog-card" onclick="toggleBlogDetails(this)">
+      <h3>The Art of Food Presentation</h3>
+      <p>Date: March 10, 2024</p>
+      <div class="blog-details">
+        <p>Discover the importance of food presentation and how it enhances the overall dining experience. Tips and tricks for creating visually stunning dishes!</p>
+      </div>
+    </div>
+
+    <div class="blog-card" onclick="toggleBlogDetails(this)">
+      <h3>Exploring Local Ingredients</h3>
+      <p>Date: March 25, 2024</p>
+      <div class="blog-details">
+        <p>Join us on a culinary journey as we explore the richness of locally sourced ingredients. Learn about the flavors and stories behind each element of our dishes.</p>
+      </div>
+    </div>
+
+    <!-- Add more featured blogs as needed -->
+
+  </div>
+
+  <div class="submit-blog-form">
+    <h2>Submit Your Own Blog</h2>
+
+    <label for="author">Your Name:</label>
+    <input type="text" id="author" name="author" placeholder="Your Name" required>
+
+    <label for="title">Blog Title:</label>
+    <input type="text" id="title" name="title" placeholder="Blog Title" required>
+
+    <label for="content">Blog Content:</label>
+    <textarea id="content" name="content" placeholder="Write your blog here..." rows="4" required></textarea>
+
+    <button type="button" onclick="submitBlog()">Submit</button>
+  </div>
+</main>
+
+<script>
+  function toggleBlogDetails(blogCard) {
+    blogCard.classList.toggle('active');
+  }
+
+  function submitBlog() {
+    var author = document.getElementById('author').value;
+    var title = document.getElementById('title').value;
+    var content = document.getElementById('content').value;
+
+    // In a real-world scenario, you would typically send this information to a server for processing.
+    // For this example, let's just display an alert.
+    alert('Blog submitted!\nAuthor: ' + author + '\nTitle: ' + title + '\nContent: ' + content);
+    // You can also reset the form if needed: document.querySelector('.submit-blog-form').reset();
+  }
+</script>
+
+</body>
+</html>

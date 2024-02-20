@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Restaurant</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    .restaurant-info {
+      margin-bottom: 20px;
+    }
+
+    .chef-details {
+      margin-bottom: 20px;
+    }
+
+    .testimonials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .testimonial {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      width: calc(50% - 20px);
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+
+    .testimonial:hover {
+      transform: scale(1.05);
+    }
+
+    .testimonial p {
+      margin: 5px 0;
+    }
+
+    .testimonial.active {
+      background-color: #4caf50;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>About Us - The Tasty Bites Restaurant</h1>
+</header>
+
+<main>
+  <div class="restaurant-info">
+    <h2>Welcome to The Tasty Bites</h2>
+    <p>Experience the finest dining at The Tasty Bites. We take pride in serving delicious and high-quality meals in a warm and inviting atmosphere.</p>
+  </div>
+
+  <div class="chef-details">
+    <h2>Meet Our Chef</h2>
+    <img src="chef.jpg" alt="Chef John Doe">
+    <p>Chef John Doe brings his culinary expertise and passion for creating exceptional dishes to The Tasty Bites. With years of experience in the culinary world, Chef John ensures that each dish is a delightful experience for our customers.</p>
+  </div>
+
+  <h2>Customer Testimonials</h2>
+
+  <div class="testimonials">
+    <div class="testimonial" onclick="toggleTestimonial(this)">
+      <p>"The Tasty Bites is my go-to place for a fantastic dining experience. The food is delicious, and the atmosphere is welcoming. Highly recommended!"</p>
+      <p>- Mary Smith</p>
+    </div>
+
+    <div class="testimonial" onclick="toggleTestimonial(this)">
+      <p>"I had the pleasure of dining at The Tasty Bites last night, and it was absolutely delightful. The flavors were exceptional, and the service was impeccable. Can't wait to visit again!"</p>
+      <p>- James Johnson</p>
+    </div>
+
+    <!-- Add more testimonials as needed -->
+
+  </div>
+</main>
+
+<script>
+  function toggleTestimonial(testimonial) {
+    testimonial.classList.toggle('active');
+  }
+</script>
+
+</body>
+</html>

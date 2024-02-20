@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Specials and Promotions - The Tasty Bites</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #f8f8f8;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    .specials {
+      margin-bottom: 30px;
+    }
+
+    .special-card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 20px;
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+
+    .special-card:hover {
+      transform: scale(1.05);
+    }
+
+    .special-card h3 {
+      margin: 0;
+    }
+
+    .special-card p {
+      margin: 5px 0;
+    }
+
+    .subscribe-form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    button {
+      width: 100%;
+      background-color: #4caf50;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .special-details {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Specials and Promotions - The Tasty Bites</h1>
+</header>
+
+<main>
+  <div class="specials" id="specials-container">
+    <h2>Current Specials and Promotions</h2>
+
+    <div class="special-card" onclick="toggleSpecialDetails(this)">
+      <h3>Happy Hour</h3>
+      <p>Every Monday to Friday</p>
+      <p>Time: 4:00 PM - 6:00 PM</p>
+      <div class="special-details">
+        <p>Enjoy discounted prices on selected drinks and appetizers during our happy hour. Don't miss out on the fun!</p>
+      </div>
+    </div>
+
+    <div class="special-card" onclick="toggleSpecialDetails(this)">
+      <h3>Weekend Brunch Special</h3>
+      <p>Saturdays and Sundays</p>
+      <p>Time: 9:00 AM - 2:00 PM</p>
+      <div class="special-details">
+        <p>Indulge in a delightful brunch with special menu items crafted just for the weekends. Join us for a relaxing morning!</p>
+      </div>
+    </div>
+
+    <!-- Add more specials as needed -->
+
+  </div>
+
+  <div class="subscribe-form">
+    <h2>Subscribe for Updates</h2>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+    <button type="button" onclick="subscribe()">Subscribe</button>
+  </div>
+</main>
+
+<script>
+  function toggleSpecialDetails(specialCard) {
+    specialCard.querySelector('.special-details').classList.toggle('active');
+  }
+
+  function subscribe() {
+    var email = document.getElementById('email').value;
+
+    // In a real-world scenario, you would typically send the email to a server for processing.
+    // For this example, let's just display an alert.
+    alert('Subscription successful!\nEmail: ' + email);
+    // You can also reset the form if needed: document.querySelector('.subscribe-form').reset();
+  }
+</script>
+
+</body>
+</html>

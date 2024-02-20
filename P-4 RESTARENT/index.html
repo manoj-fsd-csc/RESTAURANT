@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu - The Tasty Bites</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #f8f8f8;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    .menu-categories {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+    }
+
+    .menu-category {
+      padding: 10px;
+      cursor: pointer;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+
+    .menu-category:hover {
+      background-color: #f0f0f0;
+    }
+
+    .menu-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .menu-item {
+      width: calc(50% - 20px);
+      padding: 15px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+
+    .menu-item:hover {
+      transform: scale(1.05);
+    }
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    nav {
+      background-color: #d61818;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px;
+      margin: 0 10px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Menu - The Tasty Bites</h1>
+</header>
+
+<nav>
+    <a href="../P-15 RESERVATION BOOKING/inde.html">RESERVATION BOOKING</a>
+</nav>
+
+<main>
+  <div class="menu-categories">
+    <div class="menu-category" onclick="showMenu('indian')">Indian</div>
+    <div class="menu-category" onclick="showMenu('chinese')">Chinese</div>
+  </div>
+
+  <div class="menu-items" id="indian-menu">
+    <h2>Indian Menu</h2>
+
+    <div class="menu-item">
+      <h3>Butter Chicken</h3>
+      <p>Delicious chicken curry in a creamy tomato-based sauce.</p>
+    </div>
+
+    <div class="menu-item">
+      <h3>Vegetable Biryani</h3>
+      <p>Fragrant basmati rice cooked with mixed vegetables and aromatic spices.</p>
+    </div>
+
+    <!-- Add more Indian menu items as needed -->
+
+  </div>
+
+  <div class="menu-items" id="chinese-menu" style="display: none;">
+    <h2>Chinese Menu</h2>
+
+    <div class="menu-item">
+      <h3>Sweet and Sour Chicken</h3>
+      <p>Crispy chicken tossed in a sweet and tangy sauce with colorful vegetables.</p>
+    </div>
+
+    <div class="menu-item">
+      <h3>Vegetable Spring Rolls</h3>
+      <p>Crispy rolls filled with a mix of vegetables, perfect for snacking.</p>
+    </div>
+
+    <!-- Add more Chinese menu items as needed -->
+
+  </div>
+</main>
+
+<script>
+  function showMenu(category) {
+    // Hide all menus
+    document.getElementById('indian-menu').style.display = 'none';
+    document.getElementById('chinese-menu').style.display = 'none';
+
+    // Show the selected menu
+    document.getElementById(category + '-menu').style.display = 'flex';
+  }
+</script>
+
+</body>
+</html>
